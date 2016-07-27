@@ -1,21 +1,29 @@
 {
-   "background": {
-      "page": "window.html",
-      "css": "style.css"
-   },
-   "browser_action": {
-      "default_icon": "icons/19.png",
-      "default_popup": "window.html",
-      "default_title": "Announcements"
-   },
-   "permissions": ["background", "storage", "alarms"],
-   "description": "Publish announcements from a spreadsheet",
-   "icons": {
-      "128": "icons/128.png",
-      "19": "icons/19.png",
-      "48": "icons/48.png"
-   },
-   "manifest_version": 2,
-   "name": "Demo Daily Announcements",
-   "version": "0.1"
+  "manifest_version": 2,
+  "name": "Demo Daily Announcements",
+  "version": "0.1",
+
+  "background": {
+    "scripts": ["jquery-3.1.0.min.js","background.js"],
+    "persistent": true
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["popup.js"]
+  }],
+
+  "browser_action": {
+    "default_icon": "icons/19.png",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": ["background", "storage", "alarms"],
+
+  "description": "Publish announcements from a spreadsheet",
+  "icons": {
+    "128": "icons/128.png",
+    "19": "icons/19.png",
+    "48": "icons/48.png"
+  }
 }
