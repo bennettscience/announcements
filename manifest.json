@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "name": "Demo Daily Announcements",
-  "version": "0.1",
+  "version": "0.2",
 
   "background": {
-    "scripts": ["jquery-3.1.0.min.js","background.js"],
+    "scripts": ["jquery-3.1.0.min.js", "background.js"],
     "persistent": true
   },
 
@@ -22,8 +22,6 @@
 
   "description": "Publish announcements from a spreadsheet",
   "icons": {
-    "128": "icons/128.png",
-    "19": "icons/19.png",
-    "48": "icons/48.png"
+    "19": "icons/19.png"
   }
 }

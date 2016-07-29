@@ -3,8 +3,6 @@
 <head>
     <title>Demo Announcements</title>
     <script src ="jquery-3.1.0.min.js"></script>
-    <script src="popup.js"></script>
-    <script src="background.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 
@@ -12,6 +10,10 @@
   <div id="date"></div>
   <hr />
   <div id="data"></div>
-  <div id="setup"></div>
+  <div id="setup">
+	<form><input type="text" id="ssId" /><br /><input type="submit" value="set" id="set" />
+  </div>
+	<form><input type="submit" id="clear-ssId" value="Clear stored keys" /></form>
+  <script src="popup.js"></script>
 </body>
 </html>
