@@ -32,7 +32,7 @@ chrome.runtime.sendMessage({from: "popup", d: "update"}, function(response) {
 				var entry = data.feed.entry;
 				
 				$(entry).each(function() {
-					$('#data').append('<h2>'+this.gsx$title.$t+'</h2><p>'+this.gsx$text.$t+'</p>');
+					$('.data').append('<h2>'+this.gsx$title.$t+'</h2><p>'+this.gsx$text.$t+'</p><h2>Links</h2><a href="'+this.gsx$link1url.$t+'">'+this.gsx$link1text.$t+'</a><br /><a href="'+this.gsx$link2url.$t+'">'+this.gsx$link2text.$t+'</a><hr />');;
 				});
 			});
 		})        
