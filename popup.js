@@ -17,7 +17,7 @@ chrome.runtime.sendMessage({from: "popup", d: "update"}, function(response) {
 			$("#clear-ssId").show();
 		}
 	})
-	
+
 	// Clear the spreadsheet ID
 	$("#clear-ssId").click(function() {
 		// event.preventDefault();
@@ -30,14 +30,14 @@ chrome.runtime.sendMessage({from: "popup", d: "update"}, function(response) {
 
 			$.getJSON(url, function(data) {
 				var entry = data.feed.entry;
-				
+
 				$(entry).each(function() {
-					$('.data').append('<h2>'+this.gsx$title.$t+'</h2><p>'+this.gsx$text.$t+'</p><h2>Links</h2><a href="'+this.gsx$link1url.$t+'">'+this.gsx$link1text.$t+'</a><br /><a href="'+this.gsx$link2url.$t+'">'+this.gsx$link2text.$t+'</a><hr />');;
+					$('#data').append('<h2>'+this.gsx$title.$t+'</h2><p>'+this.gsx$text.$t+'</p><h2>Links</h2><a href="'+this.gsx$link1url.$t+'" target="blank">'+this.gsx$link1text.$t+'</a><br /><a href="'+this.gsx$link2url.$t+'" target="blank">'+this.gsx$link2text.$t+'</a><hr />');;
 				});
 			});
-		})        
+		})
     }
-	  
+
 	// Link the spreadsheet to the extension
 	function setup() {
 		// var ssId = "";
@@ -71,4 +71,3 @@ chrome.runtime.sendMessage({from: "popup", d: "update"}, function(response) {
   // by callback functions for security purposes.
   chrome.browserAction.onClicked.addListener(updateBadge);
   updateBadge();
-  
